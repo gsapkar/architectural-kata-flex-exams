@@ -36,3 +36,4 @@ Committed to delivering a seamless and dependable examination experience, FLEX E
 ## Proposed Solution
 ### Architecture Style
 
+While analysing the requirements, we identified various architecture characterstics.
