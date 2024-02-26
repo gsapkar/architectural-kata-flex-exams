@@ -50,7 +50,7 @@ Based on these characteristics, we propose an event-driven microservice architec
 In order to understand the user flows in the system and have better representation of them, we've done an event storming exercise and defined the actors, the actions they take (commands) and the events that should happen in the system. For better visibility, we split it into different contexts. For more details, visit the section below:
 - ### [Event Storming](event_storming/README.md)
 
-
+#### Main Flow
 Based on the functional requirements, and the outcome of the event storming exercise, we identified some main flows that the system should support and domains that will responsible for them. There are many additional flows, but all are connected to the main ones.
 
 ![Main Flows](main_flows/images/main_flows.jpeg)
@@ -58,12 +58,21 @@ Based on the functional requirements, and the outcome of the event storming exer
 We detected three main flows that would take place in the system: Access the system -> Manage exam -> Conduct an exam
 
 #### Access the system
-All users that access the system will go through an authentication steps either via an external identity provider or an internal identity verification.
+All users that access the system will go through authentication steps either via an external identity provider or an internal identity verification.
 Once they sign in they can access the parts of the system they are authorized for.
 
 #### Manage Exam
 Once an admin user has signed in, they will create an exam, add questions to it, configure the scoring rules and configure email templates that will be sent for the exam results. They can enable proctoring as well if necessary. Storing and handling the configuration will be responsibility of the exam management and proctoring domains respectively. Sending emails will be responsibility of the Emails domain.
 
 #### Conduct Exam
-
+When a Student or Proctor access an exam, it will be loaded with the configuration made in the previous flow. The data will be gathered by the Exam Conducting context. We can view the conducting of the exam from two perspectives moving onwards:
+#### Student:
+- The student will submit the necessary documents for identification, which will be validated depending on the data in the internal system. 
+- Once the documents are checked, if a proctoring is required for the exam, video and audio feed will be started for monitoring purposes.
+- As the student answers the questions, the scores will be calculated along the way in the Exam Conducting context.
+- When the exam is finished, the overall result will be calculated in the Exam Conducting context and pass the report to the emailing domain.
+- An email with the results will be sent to the student.
+#### Proctor:
+- During the exam the proctor will be able to monitor the candidates via live feed that will be handled by the Proctoring domain.
+- The proctor can follow statistics about the exam. 
 
