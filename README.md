@@ -36,4 +36,34 @@ Committed to delivering a seamless and dependable examination experience, FLEX E
 ## Proposed Solution
 ### Architecture Style
 
-While analysing the requirements, we identified various architecture characterstics.
+While analysing the requirements, we identified the following architecture characteristics as driving ones in order to assess what architecture would be the most appropriate
+
+| Characteristic | Description                                                                                                                                                                                                                             |
+|---------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Availability      | Relates to the amount of uptime of a system. Uptime is greatly dependent on physical machine uptime, but it is also significantly impacted by software architecture. Based on the requirement, it should be highly available with near zero downtime. |
+| Scalability | Relates to the system's capacity to remain responsive and performant as the number of users and requests increase over time. The system should support up to 1000 consecutive users.|
+| Responsiveness     | Relates to the amount of time it takes to get a response to the user. We would aim for page load times of under 2 seconds. |
+
+Based on these characteristics, we propose an event-driven microservice architecture. 
+
+### Functional Viewpoint
+In order to understand the user flows in the system and have better representation of them, we've done an event storming exercise and defined the actors, the actions they take (commands) and the events that should happen in the system. For better visibility, we split it into different contexts. For more details, visit the section below:
+- ### [Event Storming](event_storming/README.md)
+
+
+Based on the functional requirements, and the outcome of the event storming exercise, we identified some main flows that the system should support and domains that will responsible for them. There are many additional flows, but all are connected to the main ones.
+
+![Main Flows](main_flows/images/main_flows.jpeg)
+
+We detected three main flows that would take place in the system: Access the system -> Manage exam -> Conduct an exam
+
+#### Access the system
+All users that access the system will go through an authentication steps either via an external identity provider or an internal identity verification.
+Once they sign in they can access the parts of the system they are authorized for.
+
+#### Manage Exam
+Once an admin user has signed in, they will create an exam, add questions to it, configure the scoring rules and configure email templates that will be sent for the exam results. They can enable proctoring as well if necessary. Storing and handling the configuration will be responsibility of the exam management and proctoring domains respectively. Sending emails will be responsibility of the Emails domain.
+
+#### Conduct Exam
+
+
