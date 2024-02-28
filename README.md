@@ -76,3 +76,8 @@ When a Student or Proctor access an exam, it will be loaded with the configurati
 - During the exam the proctor will be able to monitor the candidates via live feed that will be handled by the Proctoring domain.
 - The proctor can follow statistics about the exam. 
 
+### Architecture Decision Records
+TODO
+
+### Architectural Diagram
+TODO
