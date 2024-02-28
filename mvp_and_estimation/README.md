@@ -1,5 +1,29 @@
 ## MVP
-TBD
+
+Based on the defined requirements, we identified the essential features that would be part of the MVP.
+
+### User Authentication and Role Management
+- Basic user authentication system with roles (admin, proctor, candidate).
+- Limited permissions for each role (admin can create exams, proctor can monitor exams, candidate can take exams).
+
+### Exam Management Module
+- Creation of exams with fixed question types (multiple-choice, true/false etc.).
+- Simple exam scheduling and time limits.
+- Ability to view basic exam results.
+
+### Online Proctoring Module
+- Basic webcam proctoring for monitoring candidates during exams.
+- Integration with Lockdown Browser for secure exam environment.
+- Event logs for tracking exam activity.
+
+### Audit Trail
+- Logging of basic actions related to exam and user management.
+
+### Integration
+- Integration with Internal Management System for user registration and basic data synchronization.
+
+This MVP focuses on core functionalities essential for managing and proctoring online exams while keeping the development scope manageable. Additional features can be gradually added in future iterations based on user feedback and requirements.
+
 ## Estimation
 To estimate the time required for the Minimum Viable Product (MVP) development, let's break down the work and consider various factors:
 ### Development Effort
@@ -24,11 +48,14 @@ Now, let's estimate the time required for each role to contribute to the MVP dev
 | Development                    | 6 developers * 40 hours/week * 80% productivity |192 hours/week |
 | QA                             | 2 QA engineers * 40 hours/week * 80% productivity |64 hours/week |
 | DevOps and System Administration| 3 team members * 40 hours/week * 80% productivity |96 hours/week |
+| UI/UX Design                   | 2 designers * 40 hours/week * 80% productivity |64 hours/week |
 
 Other Roles (project manager, technical writer, customer support) will contribute throughout the development process but may not require full-time dedication.
 
-
 Given these estimates, let's assume a 40-hour workweek for each role. The total available effort per week for development, QA, DevOps, and design combined is 416 hours (192 + 64 + 96 + 64).
-To estimate the time required for MVP development, divide the total MVP effort by the weekly available effort:
-Total MVP effort / Total available weekly effort = Time to develop MVP
+
+Based on that, we estimate the development of the MVP to take 14 months. 
+
 It's important to note that the actual time to develop the MVP may vary based on factors such as the complexity of features, dependencies, and unforeseen issues. Iterative development and agile practices can help adapt to changes and prioritize features effectively.
+
+The development of the whole solution, with other features that aren't part of the MVP, such as mobile application for proctoring, ability to define custom question types, chat functionality etc. would take additional 10 months.
