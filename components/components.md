@@ -12,3 +12,6 @@
 | Chat API                       | The Chat API will be responsible for the chat functionality. It will keep all conversations and chat history between the students and the proctor in a no-SQL database such as Azure Cosmos DB.|
 | Integration API                | This API will contain proxies and adapters to various third party integrations: Internal management system, JIRA, Salesforce|
 | Third party Exam API           | This API will contain the integration with Pearson VUE Exams, and other exam providers if needed.|
+| Delete Blob Files Function           | This will be Timer triggered Azure function which will delete tha blob storage files of the proctoring videos and student documents after some configurable retention period (2 years initally).|
+| Audit Trail Function          | Event triggered function which will write the message to the audit logs in Elasticsearch.|
+| Email Sender Function           | Event triggered function which will send emails through the integration with some third party emailing API.|

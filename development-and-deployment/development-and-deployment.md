@@ -44,7 +44,7 @@ We will use the following approaches for Continous Integration and Continous Del
 - Collaboration tools such as code reviews, pair programming, and knowledge sharing sessions are used to ensure high-quality code and reduce integration issues.
 
 ### The big picture:
-![CI-CD](/images/ci-cd-diagram.jpeg)
+![CI-CD](images/ci-cd-diagram.jpeg)
 
 ### Conclusion
 By following this deployment strategy for trunk-based development, teams can achieve faster delivery cycles, higher code quality, and increased agility in responding to changing requirements and customer feedback.
