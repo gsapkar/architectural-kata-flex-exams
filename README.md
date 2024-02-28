@@ -70,15 +70,18 @@ Once an admin user has signed in, they will create an exam, add questions to it,
 
 #### Conduct Exam
 When a Student or Proctor access an exam, it will be loaded with the configuration made in the previous flow. The data will be gathered by the Exam Conducting context. We can view the conducting of the exam from two perspectives moving onwards:
-#### Student:
+#### Student
 - The student will submit the necessary documents for identification, which will be validated depending on the data in the internal system. 
 - Once the documents are checked, if a proctoring is required for the exam, video and audio feed will be started for monitoring purposes.
 - As the student answers the questions, the scores will be calculated along the way in the Exam Conducting context.
 - When the exam is finished, the overall result will be calculated in the Exam Conducting context and pass the report to the emailing domain.
 - An email with the results will be sent to the student.
-#### Proctor:
+#### Proctor
 - During the exam the proctor will be able to monitor the candidates via live feed that will be handled by the Proctoring domain.
 - The proctor can follow statistics about the exam. 
+<br><br>
+
+As a next step we started defining the components of the architecture, their responsibilities and the way they should communicate. In the sections below we have documented the architectural decisions we made, the diagram with the proposed architecture and an explanation of the components.
 
 ### Architecture Decision Records
 - #### [ADR1 - Event-Driven Microservice Architecture with Microsoft Azure](decision-records/adr1-use-event-driven-microservice-architecture-with-azure.md)
