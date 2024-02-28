@@ -34,7 +34,7 @@ Committed to delivering a seamless and dependable examination experience, FLEX E
 -	Page load time should be up to 5 seconds, ideally under 2 seconds
 
 ## Proposed Solution
-### Architecture Style
+### Architecture Characteristics and Style 
 
 While analysing the requirements, we identified the following architecture characteristics as driving ones in order to assess what architecture would be the most appropriate
 
@@ -42,9 +42,13 @@ While analysing the requirements, we identified the following architecture chara
 |---------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Availability      | Relates to the amount of uptime of a system. Uptime is greatly dependent on physical machine uptime, but it is also significantly impacted by software architecture. Based on the requirement, it should be highly available with near zero downtime. |
 | Scalability | Relates to the system's capacity to remain responsive and performant as the number of users and requests increase over time. The system should support up to 1000 consecutive users.|
-| Responsiveness     | Relates to the amount of time it takes to get a response to the user. We would aim for page load times of under 2 seconds. |
+| Performance     | Relates to the amount of time it takes for the system to process a business request. |
+
+![Arch Char](architectural-characteristics/images/architectural-characteristics.jpg)
 
 Based on these characteristics, we propose an event-driven microservice architecture. 
+
+![Arch Styles](architectural-characteristics/images/architectural-styles.jpg)
 
 ### Functional Viewpoint
 In order to understand the user flows in the system and have better representation of them, we've done an event storming exercise and defined the actors, the actions they take (commands) and the events that should happen in the system. For better visibility, we split it into different contexts. For more details, visit the section below:
@@ -77,7 +81,15 @@ When a Student or Proctor access an exam, it will be loaded with the configurati
 - The proctor can follow statistics about the exam. 
 
 ### Architecture Decision Records
-TODO
+- ### [ADR1 - Event-Driven Microservice Architecture with Microsoft Azure](decision-records/adr1-use-event-driven-microservice-architecture-with-azure.md)
+- ### [ADR2 - Azure Event Grid for Event-Driven Architecture](decision-records/adr2-use-azure-event-grid.md)
+- ### [ADR3 - Implement Single Sign-On (SSO) for Authentication](decision-records/adr3-implement-sso.md)
+- ### [ADR4 - Implement Azure Redis for Caching](decision-records/adr4-use-redis-cache.md)
+- ### [ADR5 - Azure Database for PostgreSQL over Azure SQL Database](decision-records/adr5-use-postgre-sql.md)
+- ### [ADR6 - Elasticsearch as the Database for the Audit Log API](decision-records/adr6-use-elasticsearch.md)
 
 ### Architectural Diagram
-TODO
+
+The final high overview architectural diagram will look like this:
+
+![Arch Diagram](architectural-diagram/images/architectural-diagram.jpg)
