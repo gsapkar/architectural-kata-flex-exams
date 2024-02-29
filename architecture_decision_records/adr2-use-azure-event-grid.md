@@ -8,7 +8,7 @@
 The system needs to support asynchronous communication between microservices to ensure loose coupling and flexibility in a cloud environment.
 
 ## Decision:
-Azure Event Grid was chosen as the event-driven architecture solution for its native integration with Azure services, including microservices deployed on AKS, enabling efficient and reliable asynchronous communication through events.
+We will use Azure Event Grid as the central event ingestion and processing service. It has native integration with Azure services, including functions and microservices deployed on AKS, enabling efficient and reliable asynchronous communication through events. Each microservice will publish events to Event Grid, and other microservices and functions will subscribe to these events for processing.
 
 ## Consequences:
 **Positive:** 
