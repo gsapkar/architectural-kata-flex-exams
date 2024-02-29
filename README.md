@@ -115,3 +115,12 @@ The final high overview architectural diagram will look like this:
 | Delete Blob Files Function           | This will be Timer triggered Azure function which will delete tha blob storage files of the proctoring videos and student documents after some configurable retention period (2 years initally).|
 | Audit Trail Function          | Event triggered function which will write the message to the audit logs in Elasticsearch.|
 | Email Sender Function           | Event triggered function which will send emails through the integration with some third party emailing API.|
+## Implementation
+### Development and Deployment
+We propose trunk based development using feature flags for continuous integration and deployment of the solution.
+
+![CICD](development_and_deployment/images/ci-cd-diagram.jpeg)
+
+Please visit the section below for more details:
+- #### [Development and Deployment](development_and_deployment/README.md)
+
