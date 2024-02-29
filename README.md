@@ -44,11 +44,11 @@ While analysing the requirements, we identified the following architecture chara
 | Scalability | Relates to the system's capacity to remain responsive and performant as the number of users and requests increase over time. The system should support up to 1000 consecutive users.|
 | Performance     | Relates to the amount of time it takes for the system to process a business request. |
 
-![Arch Char](architectural-characteristics/images/architectural-characteristics.jpg)
+![Arch Char](architectural_characteristics/images/architectural-characteristics.jpg)
 
 Based on these characteristics, we propose an event-driven microservice architecture. 
 
-![Arch Styles](architectural-characteristics/images/architectural-styles.jpg)
+![Arch Styles](architectural_characteristics/images/architectural-styles.jpg)
 
 ### Functional Viewpoint
 In order to understand the user flows in the system and have better representation of them, we've done an event storming exercise and defined the actors, the actions they take (commands) and the events that should happen in the system. For better visibility, we split it into different contexts. For more details, visit the section below:
@@ -116,11 +116,7 @@ The final high overview architectural diagram will look like this:
 | Audit Trail Function          | Event triggered function which will write the message to the audit logs in Elasticsearch.|
 | Email Sender Function           | Event triggered function which will send emails through the integration with some third party emailing API.|
 ## Implementation
-### Development and Deployment
-We propose trunk based development using feature flags for continuous integration and deployment of the solution.
-
-![CICD](development_and_deployment/images/ci-cd-diagram.jpeg)
-
-Please visit the section below for more details:
-- #### [Development and Deployment](development_and_deployment/README.md)
-
+Details for the implementation of the solution, deployment strategy, team structure and MVP can be found in the sections below:
+- ### [Development and Deployment](development_and_deployment/README.md)
+- ### [Team Structure](team_structure/README.md)
+- ### [MVP and Estimation](mvp_and_estimation/README.md)
