@@ -11,7 +11,7 @@ Since the main characteristics of the SSS Exam management and Proctoring system 
 ## Decision:
 We will implement an event-driven microservice architecture using Azure services as follows:
 
-1. **Event Hub:** This is explained in a separate ADR - [ADR2](adr2-use-azure-event-grid.md)
+1. **Event Grid:** This is explained in a separate ADR - [ADR2](adr2-use-azure-event-grid.md)
 
 2. **Azure Functions:** We will leverage Azure Functions for event-driven serverless computing. Azure Functions allow us to execute code in response to events without managing infrastructure. We will create functions to subscribe to events from Event Grid and perform specific business logic or trigger downstream processes. Azure Functions provide scalability, auto-scaling, and cost-efficiency, aligning with our microservices architecture principles.
 
